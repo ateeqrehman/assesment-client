@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Employees</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>PhoneNumber</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let phone of phoneList | async">
+                    <td>{{phone.phoneNumber}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

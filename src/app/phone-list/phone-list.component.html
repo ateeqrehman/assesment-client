@@ -1,0 +1,80 @@
+<div [formGroup]="login_form">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label> Phone :</label>
+			<input type="text" class="form-control" formControlName="phone" maxlength="10" (keypress)="numberOnly($event)" >
+			<span class="text-danger" *ngIf="login_form.controls['phone'].hasError('required') && (login_form.controls['phone'].dirty || login_form.controls['phone'].touched)">This field is required</span>
+			<span class="text-danger" *ngIf="login_form.controls['phone'].hasError('pattern') && (login_form.controls['phone'].dirty || login_form.controls['phone'].touched)">Please enter valid phone number</span>
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+<button type="submit" class="btn btn-primary"
+ (click)="onSubmit()" [disabled]="!login_form.valid">Submit</button>
+</div>
+
+
+<!-- <div style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Enter phone number</label>
+            <input type="text" class="form-control" id="firstName" required [(ngModel)]="phoneNumber" name="phoneNumber">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+ -->
+
+<!-- <div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
+            
+            <tbody>
+                <span *ngIf="phoneList | async;let list">
+                    Length: {{list.length}} 
+                    <span *ngIf="list.length>0">
+                        <tr *ngFor="let item of list">
+                            <td>
+                                {{item}}
+                            </td>
+                        </tr>
+                    </span>
+                </span>
+
+
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+<div>
+    <div class="container">
+        <div class="text-center">
+            <!-- items being paged -->
+            Total: {{this.total}}
+            
+            <div *ngFor="let item of pagedItems">{{item}}</div>
+           
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
