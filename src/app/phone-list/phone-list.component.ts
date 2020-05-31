@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Phone } from '../Phone';
+import { Phone } from '../model/Phone';
 import { Observable } from 'rxjs';
-import { PhoneService } from '../phone.service';
+import { PhoneService } from '../service/phone.service';
 import { NgForm } from '@angular/forms';  
 import { FormGroup, FormBuilder, FormControl, FormGroupDirective, Validators } from '@angular/forms';
-import { PagerService } from '../pager.service';
+import { PagerService } from '../service/pager.service';
 
 @Component({
   selector: 'app-phone-details',

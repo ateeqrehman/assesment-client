@@ -7,7 +7,7 @@ import { PhoneDetailsComponent } from './phone-details/phone-details.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import {  ReactiveFormsModule } from '@angular/forms';
-import { PagerService} from './pager.service'
+import { PagerService} from './service/pager.service'
 
 @NgModule({
   declarations: [

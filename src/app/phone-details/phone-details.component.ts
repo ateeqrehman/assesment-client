@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Phone } from '../Phone';
+import { Phone } from '../model/Phone';
 import { Observable } from 'rxjs';
-import { PhoneService } from '../phone.service';
+import { PhoneService } from '../service/phone.service';
 
 @Component({
   selector: 'app-phone-details',
